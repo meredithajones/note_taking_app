@@ -1,6 +1,7 @@
 // Dependencies
 
 var express= require ('express');
+var path= require ('path');
 
 // Sets up the Express App
 var app = express();
@@ -23,7 +24,6 @@ app.use(express.json());
 
 
 // Routes
-
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "view.html"));
@@ -32,7 +32,6 @@ app.get("/", function(req, res) {
 //HTML Routes:
 // get/notes will return the notes.html file
 //get * will return the index.html file
-
 app.get("/notes",(req, res) => 
   res.sendFile(path.join(__dirname, "notes.html")));
 
@@ -42,13 +41,19 @@ app.get("/*", (req, res) =>
 
 //Creating API routes:
 //Get /api/notes will read the db.json file and return all the saved notes as JSON
-
 app.get("/api/notes", (req,res) =>
-    return res.json(notes);
+    res.sendFile(path.join(__dirname,")db/db.json")));
+
+// Get an individual note: 
+app.get("/api/notes/:note", (req, res) => {
+    var singleNote = req.params.note;
+    console.log(singleNote);
+    res.json(singleNote)      
+  });
 
 
-// Starts the server to begin listening
-// =============================================================
+  
+// Starts the server listening
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
