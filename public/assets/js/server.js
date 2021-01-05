@@ -10,17 +10,14 @@ var app = express();
 var PORT = process.env.PORT || 3001;
 
 
-//Post /api/notes should receive a new note and save it on the 
-//request body, add it to db.json file & return new note to the client.
-//Delete /api/notes/:id - should recieve a query parameter containing the id of the 
-//note to delete. Give each note a unique id when it is saved. 
-//In order to delete, you will need to read all notes from the db.json
-//remove the note wiht the given id property, and then rewrite the 
-//notes to the db.json file. 
-
 // Setting up Express to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Adding static path 
+app.use(express.static(path.join(__dirname, "public")));
+
+
 
 
 // Routes
@@ -51,8 +48,41 @@ app.get("/api/notes/:note", (req, res) => {
     res.json(singleNote)      
   });
 
+//Post /api/notes should receive a new note and save it on the 
+//request body, add it to db.json file & return new note to the client.
+app.post("/api.notes",(req, res ) => {
+    //Error handling
+    if (err) throw err;
+    const newNotes = JSON.parse(data) 
+    //Add the new note to storage and give it an id
+    const addNote = {
+        id: notes.index +1,
+    //Push new note to the array
+    newNotes.push(req.body);
+    }
+}
 
-  
+}
+)
+
+//Delete /api/notes/:id - should recieve a query parameter containing the id of the 
+//note to delete. Give each note a unique id when it is saved. 
+//In order to delete, you will need to read all notes from the db.json
+//remove the note wiht the given id property, and then rewrite the 
+//notes to the db.json file. 
+
+
+//Setting up HTML Routes
+app.get("/notes", (req, res) => res.sendFile(__dirname + "/public/notes.html"));
+
+app.get("/", (req, res) => res.sendFile(__dirname + "/public/index.html"));
+
+//CSS Route
+app.get("/notes", (req, res) => res.sendFile(__dirname + "/public/assets/css/styles.css"));
+
+//JS Route
+app.get("/notes", (req, res) => res.sendFile(__dirname + "/public/assets/js/index.js"));
+
 // Starts the server listening
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
