@@ -79,7 +79,7 @@ app.post("/api/notes",(req, res ) => {
 // Use app.delete
   app.delete("/api/notes/:id", (req,res) => {
       const id = req.params.id;
-      const note = notes.filter(function(selectedNote) {
+      const newNotes = notes.filter(function(selectedNote) {
           return selectedNote.id !== id;
       });
 
