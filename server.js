@@ -1,6 +1,7 @@
 // Dependencies
 
 const express= require ('express');
+//setting up random number generator to create unique note ids
 const { v4: uuidv4 } = require('uuid');
 const fs = require("fs");
 const path= require ('path');
@@ -20,17 +21,12 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-// Routes
-// Sending the user to first AJAX Page
-
-
 //HTML Routes:
 // get/notes will return the notes.html file
 //get * will return the index.html file
 app.get("/notes",(req, res) => {
   res.sendFile(path.join(__dirname, "./public/notes.html"))
 });
-
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"))
@@ -44,7 +40,6 @@ app.get("/api/notes", (req,res) =>{
     var notes = JSON.parse(fs.readFileSync("db/db.json", "utf8"));
       res.json(notes)
       // .catch((err) => res.status(500).json(err));
-
 });
 
 // Get an individual note: 
@@ -59,6 +54,7 @@ app.get("/api/notes/:note", (req, res) => {
 app.post("/api/notes",(req, res ) => {
     console.log("note", req.body)
     const {title, text} = req.body;
+    //Creating new note object and assigning id generator
     const newNote = { title, text, id: uuidv4()};
     const notes = JSON.parse(fs.readFileSync("db/db.json", "utf8"));
     const newNotes = [...notes, newNote];
@@ -86,13 +82,13 @@ app.delete("/api/notes/:id", (req, res) => {
       //send response back to client
       res.json(newNotes)  
     })
+    
   });//delete method closing
 
 //CSS Route
 app.get("/notes", (req, res) => {
   res.sendFile(__dirname + "/public/assets/css/styles.css")
 });
-
 
 
 // Starts the server listening
