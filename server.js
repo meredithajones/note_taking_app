@@ -76,19 +76,19 @@ app.post("/api/notes",(req, res ) => {
     
 //   })
 
-//Am I able to use "clear" in order to delete notes?
-  // app.post("/api/notes/clear", (req, res) => {
+// Use app.delete
+  app.delete("/api/notes/:id", (req, res) => {
   //   // Empty out the arrays of data
-  //   newNote.id.length = 0;
-  //   newNote.id.length = 0;
-  // });
+    newNote.id.length = 0;
+    newNote.id.length = 0;
+  });
 
- // rewrite the notes to the db.json file
-    // fs.writeFile(__dirname + "/db/db.json", JSON.stringify(newNotes), (err, data) => {
-    //   if (err) throw err;
-    //   //send response back to client
-    //   res.json(newNotes)  
-    // });
+//  // rewrite the notes to the db.json file
+//     fs.writeFile(__dirname + "/db/db.json", JSON.stringify(newNotes), (err, data) => {
+//       if (err) throw err;
+//     //   //send response back to client
+//       res.json(newNotes)  
+//     });
 
   // });//delete method closing
 
