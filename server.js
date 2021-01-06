@@ -68,22 +68,29 @@ app.post("/api/notes",(req, res ) => {
 //remove the note with the given id property, and then rewrite the 
 //notes to the db.json file. 
 
-app.delete("/api/notes/:id", (req, res) => {
-  fs.readFileSync(__dirname + "/db/db.json", (err, data) => { 
-    if (err) throw err;
-    // save the array from db.json in notes
-    let newNotes = JSON.parse(data)
+// app.delete("/api/notes/:id", (req, res) => {
+//   fs.readFileSync(__dirname + "/db/db.json", (err, data) => { 
+//     if (err) throw err;
+//     // save the array from db.json in notes
+//     let newNotes = JSON.parse(data)
     
-  })
+//   })
+
+//Am I able to use "clear" in order to delete notes?
+  // app.post("/api/notes/clear", (req, res) => {
+  //   // Empty out the arrays of data
+  //   newNote.id.length = 0;
+  //   newNote.id.length = 0;
+  // });
 
  // rewrite the notes to the db.json file
-    fs.writeFile(__dirname + "/db/db.json", JSON.stringify(newNotes), (err, data) => {
-      if (err) throw err;
-      //send response back to client
-      res.json(newNotes)  
-    })
-    
-  });//delete method closing
+    // fs.writeFile(__dirname + "/db/db.json", JSON.stringify(newNotes), (err, data) => {
+    //   if (err) throw err;
+    //   //send response back to client
+    //   res.json(newNotes)  
+    // });
+
+  // });//delete method closing
 
 //CSS Route
 app.get("/notes", (req, res) => {
