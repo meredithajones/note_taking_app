@@ -83,8 +83,9 @@ app.post("/api/notes",(req, res ) => {
           return selectedNote.id !== id;
       });
 
+  
   // rewrite the notes to the db.json file
-      fs.writeFileSync('./db/db.json', JSON.stringify(newNotes));
+      fs.writeFileSync("./db/db.json", JSON.stringify(newNotes));
       res.json(newNotes);
       res.end(); 
   });
