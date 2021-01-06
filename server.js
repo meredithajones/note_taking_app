@@ -77,11 +77,18 @@ app.post("/api/notes",(req, res ) => {
 //   })
 
 // Use app.delete
-  app.delete("/api/notes/:id", (req, res) => {
-  //   // Empty out the arrays of data
-    newNote.id.length = 0;
-    newNote.id.length = 0;
+  app.delete("/api/notes/:id", (req,res) => {
+      const id = req.params.id;
+      const note = notes.filter(function(selectedNote) {
+          return selectedNote.id !== id;
+      });
+
+  // rewrite the notes to the db.json file
+      fs.writeFileSync('./db/db.json', JSON.stringify(newNotes));
+      res.json(newNotes);
+      res.end(); 
   });
+ 
 
 //  // rewrite the notes to the db.json file
 //     fs.writeFile(__dirname + "/db/db.json", JSON.stringify(newNotes), (err, data) => {
