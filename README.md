@@ -2,6 +2,8 @@ Notation Application
 =================================================================
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![GitHub repo size](https://img.shields.io/github/repo-size/MikelTafalla/Employee_Tracker?logo=github)
+![GitHub top language](https://img.shields.io/github/languages/top/MikelTafalla/Employee_Tracker?color=green&logo=github&logoColor=green)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/meredithajones/note_taking_app?style=flat-square)
 ![GitHub language count](https://img.shields.io/github/languages/count/meredithajones/note_taking_app)
 
@@ -53,7 +55,6 @@ In order to run the application, open the server.js file in integrated terminal,
 <details>
 <summary>Technology used to create application</summary>
 
-* Jquery
 
 * HTML5 (given)
 
