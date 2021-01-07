@@ -32,10 +32,11 @@ Notation Application
 
 ## Introduction
 
+This application functions to give users the ability to create, store, retrieve and delete notes with a title and a body. 
 
 
 ## Usage 
-
+In order to run the application, open the server.js file in integrated terminal, run "npm install" to install dependencies, and then run "node server.js".
 
 ### Screen Shots
 ![“An image of the landing page for the note taking application”](assets/images/screenshot_1.png)

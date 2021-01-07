@@ -68,14 +68,6 @@ app.post("/api/notes",(req, res ) => {
 //remove the note with the given id property, and then rewrite the 
 //notes to the db.json file. 
 
-// app.delete("/api/notes/:id", (req, res) => {
-//   fs.readFileSync(__dirname + "/db/db.json", (err, data) => { 
-//     if (err) throw err;
-//     // save the array from db.json in notes
-//     let newNotes = JSON.parse(data)
-    
-//   })
-
 // Use app.delete
   app.delete("/api/notes/:id", (req,res) => {
 
@@ -88,10 +80,10 @@ app.post("/api/notes",(req, res ) => {
           return selectedNote.id !== id;
       });
     
-
   
   // rewrite the notes to the db.json file
       fs.writeFileSync("./db/db.json", JSON.stringify(newNotes));
+      //Send response back to client
       res.json(newNotes);
       res.end(); 
   });
@@ -105,13 +97,10 @@ app.post("/api/notes",(req, res ) => {
 //       res.json(newNotes)  
 //     });
 
-  // });//delete method closing
-
 //CSS Route
 app.get("/notes", (req, res) => {
   res.sendFile(__dirname + "/public/assets/css/styles.css")
 });
-
 
 // Starts the server listening
 app.listen(PORT, function() {
