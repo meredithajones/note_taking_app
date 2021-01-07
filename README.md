@@ -8,8 +8,8 @@ Notation Application
 ![html badge](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
 ![css badge](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
 ![express.js badge](https://img.shields.io/badge/express.js%20-%23404d59.svg?&style=for-the-badge)
-![jquery badge](https://img.shields.io/badge/jquery%20-%230769AD.svg?&style=for-the-badge&logo=jquery&logoColor=white)
 ![node.js badge](https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white)
+![heroku badge](https://img.shields.io/badge/heroku%20-%23430098.svg?&style=for-the-badge&logo=heroku&logoColor=white)
 
 ## Table of Contents
 
@@ -22,6 +22,8 @@ Notation Application
 -[Usage](#Usage)
 
 -[Credits](#Credits)
+
+-[Contact](#Contact)
 
 -[License](#License) 
 
@@ -61,16 +63,17 @@ In order to run the application, open the server.js file in integrated terminal,
 
 * Nodejs
 
+* Npm package uuidv4 - Unique number id generation for notes
+
 * Heroku - Hosting
 	
 
 </details>
 
-### Features
-
 
 ## Project Challenges
-*  
+*  One of the largest challenges for me in this project turned out to be making sure that I had both my api and html routes written correctly. I spent the most time making adgustments to those routes repeatedly in order to get the application to run.
+Also, at the time of deploying the application, I was still unable to get the "delete" function to work, in spite of spending hours over the course of several days tweaking that section of code. 
 
 
 ## Credits
@@ -78,7 +81,11 @@ In order to run the application, open the server.js file in integrated terminal,
 * [Stack Overflow general research](https://stackoverflow.com/) 
 * [Mdn web docs general research](https://developer.mozilla.org/en-US/)
 * [AskBCS bug fixes]
-* [JQuery documentation](https://api.jquery.com/)
+* [npmjs package uuidv4](https://www.npmjs.com/package/uuidv4)
+* [Mdn web docs general research](https://developer.mozilla.org/
+
+## Author
+ Meredith Jones
 
 ## Contact
  [@MeredithJones](https://github.com/meredithajones)
