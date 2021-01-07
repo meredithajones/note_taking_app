@@ -28,7 +28,7 @@ Notation Application
 
 ## Links
 
-* [Deployed Link]()
+* [Deployed Link](https://boiling-citadel-67370.herokuapp.com/)
 
 ## Introduction
 
@@ -38,11 +38,11 @@ Notation Application
 
 
 ### Screen Shots
-![“”](assets/images/)
+![“An image of the landing page for the note taking application”](assets/images/screenshot_1)
 
-![“”](assets/images/)
+![“An image of a new note written to demo functionality”](assets/images/screenshot_2)
 
-![“”](assets/images/)
+![“An image of a new note having been saved on the left hand side of the appllication”](assets/images/screenshot_3)
 
 
 
@@ -52,17 +52,16 @@ Notation Application
 
 * Jquery
 
-* HTML5
+* HTML5 (given)
 
-* CSS3
+* CSS3 (given)
 
 * Express
 
 * Nodejs
+
+* Heroku - Hosting
 	
-
-* APIs
-
 
 </details>
 
