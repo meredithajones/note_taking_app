@@ -38,11 +38,11 @@ Notation Application
 
 
 ### Screen Shots
-![“An image of the landing page for the note taking application”](assets/images/screenshot_1)
+![“An image of the landing page for the note taking application”](assets/images/screenshot_1.png)
 
-![“An image of a new note written to demo functionality”](assets/images/screenshot_2)
+![“An image of a new note written to demo functionality”](assets/images/screenshot_2.png)
 
-![“An image of a new note having been saved on the left hand side of the appllication”](assets/images/screenshot_3)
+![“An image of a new note having been saved on the left hand side of the appllication”](assets/images/screenshot_3.png)
 
 
 
