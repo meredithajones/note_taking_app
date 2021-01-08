@@ -70,23 +70,24 @@ app.post("/api/notes",(req, res ) => {
 
 // Use app.delete
   app.delete("/api/notes/:id", (req,res) => {
-
+      let newNotes;
+      let id = req.params.id
     fs.readFile(__dirname + "/db/db.json", "utf8", (err, data) => { 
       if (err) throw err;
       // save the object array from db.json in notes
       let notes = JSON.parse(data)
-      const id = req.params.id;
-      const newNotes = notes.filter(function(selectedNote) {
-          return selectedNote.id !== id;
-      });
+      newNotes = notes.filter((note) => note.id !== id);
+      console.log("Filter", newNotes)
+      fs.writeFileSync("./db/db.json", JSON.stringify(newNotes));
+
+    })  
     
   
-  // rewrite the notes to the db.json file
-      fs.writeFileSync("./db/db.json", JSON.stringify(newNotes));
+  //rewrite the notes to the db.json file
       //Send response back to client
-      res.json(newNotes);
+      res.json({ok: true});
       res.end(); 
-  });
+
 });
  
 
