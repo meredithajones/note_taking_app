@@ -8,7 +8,13 @@ html, body {
 }
 nav {
   font-family: Bebas Neue;
-  color: black;
+  background-color: #78C4D4 !important;
+}
+
+nav a {
+  margin-left: 30px;
+  font-size: 35px !important;
+  color: black !important;
 }
 
 h1 {
