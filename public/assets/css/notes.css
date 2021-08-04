@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+}
+
+nav {
+    background-color: #78C4D4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+#icon {
+    color: white;
+    font-size: 40px;
+}
