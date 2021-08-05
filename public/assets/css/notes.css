@@ -6,11 +6,16 @@ nav {
     background-color: #78C4D4;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 5px;
+    list-style: none;
+    text-decoration: none;
+    width: 100%;
 
 }
 
 #icon {
     color: white;
-    font-size: 40px;
+    font-size: 30px;
+    padding: 15px;
 }
